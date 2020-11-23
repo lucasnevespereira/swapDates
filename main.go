@@ -13,10 +13,9 @@ func swapDates(dateStart *string, dateEnd *string) {
 	if err != nil {
 		println(err)
 	}
-	start := parsedDateStart.AddDate(0, 0, 7*2).Format(dateFormat) // Added 2 weeks to datestart
-	end := parsedDateStart.AddDate(0, 0, 7*3).Format(dateFormat)   // Added 3 weeks to dateStart
-	*dateStart = start
-	*dateEnd = end
+
+	*dateStart = parsedDateStart.AddDate(0, 0, 7*2).Format(dateFormat) // Added 2 weeks to datestart
+	*dateEnd = parsedDateStart.AddDate(0, 0, 7*3).Format(dateFormat)   // Added 3 weeks to dateStart
 }
 
 func main() {
